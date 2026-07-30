@@ -186,3 +186,8 @@ export default function App() {
     </div>
   );
 }
+// Change from localhost to your Render URL:
+const response = await fetch('https://my-flashcard-backend.onrender.com/api/generate-cards', {
+  method: 'POST',
+  body: formData,
+});

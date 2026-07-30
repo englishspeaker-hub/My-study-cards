@@ -48,6 +48,13 @@ const PORT = 3000;
 app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
 import React, { useState } from 'react';
 
+// Change from localhost to your Render URL:
+const response = await fetch('https://my-flashcard-backend.onrender.com/api/generate-cards', {
+  method: 'POST',
+  body: formData,
+});
+import React, { useState } from 'react';
+
 export default function App() {
   const [screen, setScreen] = useState('dashboard'); // 'dashboard', 'loading', 'editor'
   const [cards, setCards] = useState([]);
@@ -186,11 +193,6 @@ export default function App() {
     </div>
   );
 }
-// Change from localhost to your Render URL:
-const response = await fetch('https://my-flashcard-backend.onrender.com/api/generate-cards', {
-  method: 'POST',
-  body: formData,
-});
 git add .
 git commit -m "Update backend URL"
 git push
